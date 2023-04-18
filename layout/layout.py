@@ -74,66 +74,97 @@ accordion = html.Div(
                         dbc.InputGroupText(["f", html.Sub("start")]),
                         dbc.Input(id='fstart',
                                   type="number",
-                                  value=0.5,
-                                  min=0.01,
-                                  max=0.9999,
-                                  step=0.0001),
+                                  value=76,
+                                  min=2,
+                                  max=100,
+                                  step=0.001),
                         dbc.InputGroupText("GHz"),
+                        dbc.Tooltip(
+                            "Start frequency of a pulse/chirp",
+                            target="fstart",
+                            placement="top",
+                        )
                     ], className="mb-3"),
 
                     dbc.InputGroup([
-                        dbc.InputGroupText(["f", html.Sub("stop")]),
+                        dbc.InputGroupText(["f", html.Sub("end")]),
                         dbc.Input(id='fend',
                                   type="number",
-                                  value=0.5,
-                                  min=0.01,
-                                  max=0.9999,
-                                  step=0.0001),
+                                  value=77,
+                                  min=2,
+                                  max=100,
+                                  step=0.001),
                         dbc.InputGroupText("GHz"),
+                        dbc.Tooltip(
+                            "End frequency of a pulse/chirp",
+                            target="fend",
+                            placement="top",
+                        )
                     ], className="mb-3"),
 
                     dbc.InputGroup([
                         dbc.InputGroupText(["T", html.Sub("c")]),
                         dbc.Input(id='tc',
                                   type="number",
-                                  value=0.5,
-                                  min=0.01,
-                                  max=0.9999,
-                                  step=0.0001),
-                        dbc.InputGroupText("ns"),
+                                  value=50,
+                                  min=10,
+                                  max=1000,
+                                  step=0.1),
+                        dbc.InputGroupText("µs"),
+                        dbc.Tooltip(
+                            "Pulse/Chirp length",
+                            target="tc",
+                            placement="top",
+                        )
                     ], className="mb-3"),
 
                     dbc.InputGroup([
                         dbc.InputGroupText(["T", html.Sub("PRP")]),
                         dbc.Input(id='prp',
                                   type="number",
-                                  value=0.5,
-                                  min=0.01,
-                                  max=0.9999,
-                                  step=0.0001),
-                        dbc.InputGroupText("ns"),
+                                  value=60,
+                                  min=10,
+                                  max=1000,
+                                  step=0.1),
+                        dbc.InputGroupText("µs"),
+                        dbc.Tooltip(
+                            "Pulse/Chirp repetition period",
+                            target="prp",
+                            placement="top",
+                        )
                     ], className="mb-3"),
 
                     dbc.InputGroup([
                         dbc.InputGroupText("EIRP"),
-                        dbc.Input(id='tx-power',
+                        dbc.Input(id='eirp',
                                   type="number",
-                                  value=0.5,
-                                  min=0.01,
-                                  max=0.9999,
-                                  step=0.0001),
+                                  value=10,
+                                  min=-20,
+                                  max=60,
+                                  step=0.1),
                         dbc.InputGroupText("dBm"),
+                        dbc.Tooltip(
+                            "Effective Isotropic Radiated Power \
+                                (tx power + antenna gain)",
+                            target="eirp",
+                            placement="top",
+                        )
                     ], className="mb-3"),
 
                     dbc.InputGroup([
                         dbc.InputGroupText(["N", html.Sub("Pulses")]),
                         dbc.Input(id='pulses',
                                   type="number",
-                                  value=0.5,
-                                  min=0.01,
-                                  max=0.9999,
-                                  step=0.0001),
+                                  value=128,
+                                  min=32,
+                                  max=1024,
+                                  step=1),
                         # dbc.InputGroupText("ns"),
+                        dbc.Tooltip(
+                            "Number of pulses/chirps",
+                            target="pulses",
+                            placement="top",
+                        )
                     ], className="mb-3"),
 
                     dbc.FormText("Receiver"),
@@ -293,7 +324,7 @@ card_gain = dbc.Card([
                     style={'height': '92vh'},
                 ),
 
-            ]), width=9),], class_name="g-5")
+            ], class_name="g-0"), width=9),], class_name="g-3")
     ], class_name="mx-3 my-5"),
 ], className="shadow-sm",
 )
