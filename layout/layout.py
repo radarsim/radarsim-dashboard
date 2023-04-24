@@ -301,7 +301,7 @@ card_gain = dbc.Card([
             ]), width=3),
             dbc.Col(dbc.Row([
                 dbc.Col(dcc.Graph(
-                    id='location',
+                    id='chirps',
                     figure={
                         'data': [{'mode': 'lines',
                                   'type': 'scatter',
@@ -317,7 +317,7 @@ card_gain = dbc.Card([
                 ), width=6),
 
                 dbc.Col(dcc.Graph(
-                    id='chirps',
+                    id='location',
                     figure={
                         'data': [{'mode': 'lines',
                                   'type': 'scatter',
