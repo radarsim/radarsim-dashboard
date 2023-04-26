@@ -308,11 +308,8 @@ card_gain = dbc.Card([
                                   'x': [],
                                   'y': []}],
                         'layout': {
-                            'template': pio.templates['plotly'],
                             'height': 300,
-                            'uirevision': 'no_change',
-                            'xaxis': dict(title='Number of Channels'),
-                            'yaxis': dict(title='Integration Gain (dB)')}
+                            'uirevision': 'no_change'}
                     },
                 ), width=6),
 
