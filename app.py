@@ -87,6 +87,7 @@ def plot_chirp(fstart, fend, tc, prp):
                 "y": freq, "name": 'chirp 1'}]
     fig_layout = dict(
         template=pio.templates['seaborn'],
+        height=300,
         margin=dict(l=20, r=5, t=30, b=20),
         xaxis=dict(title="Time (us)"),
         yaxis=dict(title="Frequency (GHz)"),
